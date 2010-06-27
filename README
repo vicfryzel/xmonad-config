@@ -6,7 +6,6 @@ http://github.com/vicfryzel/xmonad-config
 
 = Requirements =
 
-== Haskell Packages ==
  * xmonad 0.9.1
  * xmonad-contrib 0.9.1
  * xmobar 0.11.1
