@@ -10,18 +10,24 @@ http://github.com/vicfryzel/xmonad-config
  * xmonad 0.9.1
  * xmonad-contrib 0.9.1
  * xmobar 0.11.1
+ * trayer 1.0
+ * dmenu 4.0
 
 
 = Installation =
 
 $ cd
+$ git clone git@github.com:vicfryzel/xmonad-config.git
 $ mv .xmonad .xmonad.orig
-$ git clone git@github.com:vicfryzel/xmonad-config.git .xmonad
+$ cp -R xmonad-config/xmonad ~/.xmonad
+$ cp -R xmonad-config/bin ~/bin
+$ echo "PATH=\$PATH:~/bin" >> ~/.bashrc
 
 
 = Notes =
 
 The key bindings are listed in xmonad.hs.
 
-The colors set in the xmobar config are meant to coincide with the IR_Black
-terminal and vim themes found at http://blog.infinitered.com/entries/show/6.
+The colors set in the xmobar config and dmenu script are meant to coincide
+with the IR_Black terminal and vim themes found at
+http://blog.infinitered.com/entries/show/6.
