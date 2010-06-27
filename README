@@ -1,0 +1,27 @@
+= Introduction =
+
+xmonad-config is the Xmonad and xmobar configuration used by Vic Fryzel.
+http://github.com/vicfryzel/xmonad-config
+
+
+= Requirements =
+
+== Haskell Packages ==
+ * xmonad 0.9.1
+ * xmonad-contrib 0.9.1
+ * xmobar 0.11.1
+
+
+= Installation =
+
+$ cd
+$ mv .xmonad .xmonad.orig
+$ git clone git@github.com:vicfryzel/xmonad-config.git .xmonad
+
+
+= Notes =
+
+The key bindings are listed in xmonad.hs.
+
+The colors set in the xmobar config are meant to coincide with the IR_Black
+terminal and vim themes found at http://blog.infinitered.com/entries/show/6.
