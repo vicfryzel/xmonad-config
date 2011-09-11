@@ -74,7 +74,7 @@ here are some instructions for some common login managers.
 
 ### Starting xmonad from slim
 
-    ln -s ~/.xmonad/init/xinitrc ~/.xinitrc
+    ln -s ~/.xmonad/xinitrc ~/.xinitrc
     # Logout, login from slim
 
 
