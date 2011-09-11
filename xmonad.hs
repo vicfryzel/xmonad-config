@@ -25,6 +25,7 @@ import qualified Data.Map        as M
 --
 myTerminal = "/usr/bin/urxvt"
 
+
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
