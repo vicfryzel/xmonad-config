@@ -202,7 +202,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "eject -T")
 
   --------------------------------------------------------------------
-  -- "Standard" Xmonad key bindings
+  -- "Standard" xmonad key bindings
   --
 
   -- Close focused window.
