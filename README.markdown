@@ -80,6 +80,47 @@ here are some instructions for some common login managers.
     # Logout, login from slim
 
 
+## Keyboard shortcuts
+
+After starting xmonad, use the following keyboard shortcuts to function in
+your new window manager.  I recommend you print these out so that you don't
+get stranded once you logout and back in.
+
+* Alt+Shift+Return: Start a terminal
+* Alt+Ctrl+l: Lock screen
+* Alt+p: Start dmenu.  Once it comes up, type the name of a program and enter
+* Alt+Shift+p: Take screenshot in select mode. Click or click and drag to select
+* Alt+Ctrl+Shift+p: Take fullscreen screenshot. Supports multiple monitors
+* Alt+Shift+c: Close focused window
+* Alt+Space: Change workspace layout
+* Alt+Shift+Space: Change back to default workspace layout
+* Alt+n: Resize viewed windows to the correct size
+* Alt+Tab: Focus next window
+* Alt+j: Focus next window
+* Alt+k: Focus previous window
+* Alt+m: Focus master window
+* Alt+Return: Swap focused window with master window
+* Alt+Shift+j: Swap focused window with next window
+* Alt+Shift+k: Swap focused window with previous window
+* Alt+h: Shrink master window area
+* Alt+l: Expand master window area
+* Alt+t: Push floating window back into tiling
+* Alt+,: Increment number of windows in master window area
+* Alt+.: Decrement number of windows in master window area
+* Alt+q: Restart xmonad. This reloads xmonad configuration, does not logout
+* Alt+Shift+q: Quit xmonad and logout
+* Alt+[1-9]: Switch to workspace 1-9, depending on which number was pressed
+* Alt+Shift+[1-9]: Send focused window to workspace 1-9
+* Alt+w: Focus left-most monitor (Xinerama screen 1)
+* Alt+e: Focus center-most monitor (Xinerama screen 2)
+* Alt+r: Focus right-most monitor (Xinerama screen 3)
+* Alt+Shift+w: Send focused window to workspace on left-most monitor
+* Alt+Shift+e: Send focused window to workspace on center-most monitor
+* Alt+Shift+r: Send focused window to workspace on right-most monitor
+* Alt+Left Mouse Drag: Drag focused window out of tiling
+* Alt+Right Mouse Drag: Resize focused window, bring out of tiling if needed
+
+
 ## Personalizing or modifying xmonad-config
 
 Once cloned, xmonad-config is laid out as follows.
