@@ -17,7 +17,7 @@ import XMonad.Util.EZConfig(additionalKeys)
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
- 
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -58,7 +58,7 @@ myNumlockMask   = mod2Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1:code","2:web","3:msg","4:vm","5:media","6","7","8","9"]
+myWorkspaces    = ["1:term","2:web","3:code","4:vm","5:media","6","7","8","9"]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
