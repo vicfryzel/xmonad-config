@@ -68,7 +68,7 @@ here are some instructions for some common login managers.
 ### Starting xmonad from xdm, kdm, or gdm
 
     echo xmonad >> ~/.xsession
-    # Note: this method will start no programs in your new session.
+    # Note: this method will start no programs in your new session upon login.
     # To get a terminal in your next session, press Alt+Shift+Enter.
     # Logout, login from xdm/kdm/gdm
 
