@@ -1,0 +1,33 @@
+#!/bin/sh
+# Script to configure X, start common apps, and start xmonad.
+# Author: Vic Fryzel
+# http://github.com/vicfryzel/xmonad-config
+
+
+# Configure path so that we can access our scripts below
+PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
+
+# Configure X
+xsetroot -cursor_name left_ptr &
+xrdb -merge ~/.Xdefaults &
+xscreensaver -no-splash &
+feh --bg-center ~/wallpapers/city.jpeg &
+
+# Automatically mount removable media
+thunar --daemon &
+
+# Start the system tray
+tray &
+
+# Start two terminals
+urxvt &
+urxvt &
+
+# Start two Chromium windows
+chromium &
+chromium &
+
+# Start xchat (IRC client)
+xchat &
+
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
