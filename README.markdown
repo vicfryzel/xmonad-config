@@ -1,20 +1,20 @@
-= Introduction =
+# Introduction
 
-xmonad-config is the Xmonad and xmobar configuration used by Vic Fryzel.
+xmonad-config is the xmonad and xmobar configuration used by Vic Fryzel.
 http://github.com/vicfryzel/xmonad-config
 
 
-= Requirements =
+# Requirements
 
- * xmonad 0.9.1 or 0.9.2
- * xmonad-contrib 0.9.1 or 0.9.2
- * xmobar 0.11.1 or 0.13
- * trayer 1.0
- * dmenu 4.0
- * [yeganesh 2.2](http://dmwit.com/yeganesh/)
+* xmonad 0.9.1 or 0.9.2
+* xmonad-contrib 0.9.1 or 0.9.2
+* xmobar 0.11.1 or 0.13
+* trayer 1.0
+* dmenu 4.0
+* [yeganesh 2.2](http://dmwit.com/yeganesh/)
 
 
-= Installation =
+# Installation
 
     cd
     mv .xmonad .xmonad.orig
@@ -22,10 +22,10 @@ http://github.com/vicfryzel/xmonad-config
     echo "PATH=\$PATH:~/.xmonad/bin" >> ~/.bashrc
 
 
-= Notes =
+# Notes
 
-The key bindings are listed in xmonad.hs.
+Key bindings are listed in xmonad.hs.
 
-The colors set in the xmobar config and dmenu script are meant to coincide
-with the IR_Black terminal and vim themes found at
+Colors set in the xmobar config and dmenu script are meant to coincide with
+the IR_Black terminal and vim themes found at
 http://blog.infinitered.com/entries/show/6.
