@@ -61,7 +61,8 @@ you may already have, cloning the git repository, and updating your PATH.
     cd
     mv .xmonad .xmonad.orig
     git clone git@github.com:vicfryzel/xmonad-config.git .xmonad
-    echo "PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin" >> ~/.bashrc
+    echo "export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin" >> ~/.bashrc
+    source ~/.bashrc
 
 Once xmonad-config is installed, you also need to ensure you can actually
 start xmonad.  The mechanism to do this varies based on each environment, but
