@@ -7,6 +7,7 @@ import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
@@ -20,7 +21,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "gnome-terminal"
+myTerminal      = "/usr/bin/urxvt"
  
 -- Width of the window border in pixels.
 --
@@ -72,15 +73,19 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launch a terminal
     [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch gmrun
+    -- launch xscreensaver, lock the screen
     , ((modMask .|. controlMask, xK_l     ), spawn "xscreensaver-command -lock")
 
-    -- launch dmenu
-    , ((modMask,               xK_p     ), spawn "exe=`dmenu_path | ~/bin/dmenu` && eval \"exec $exe\"")
+    -- launch dmenu via yeganesh
+    , ((modMask,               xK_p     ), spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")
  
-    -- launch gmrun
-    , ((modMask .|. shiftMask, xK_p     ), spawn "gmrun")
- 
+    -- launch scrot in select mode.  Either click a window, or draw a
+    -- rectangle with the mouse.
+    , ((modMask .|. shiftMask, xK_p), spawn "select-screenshot")
+
+    -- launch scrot in multiple head mode.
+    , ((modMask .|. controlMask .|. shiftMask, xK_p), spawn "screenshot")
+
     -- close focused window 
     , ((modMask .|. shiftMask, xK_c     ), kill)
  
@@ -137,6 +142,21 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
  
     -- Restart xmonad
     , ((modMask              , xK_q     ), restart "xmonad" True)
+
+    -- Mute
+    , ((0, 0x1008FF12), spawn "amixer -q set Front toggle")
+    -- Lower volume
+    , ((0, 0x1008FF11), spawn "amixer -q set Front 10%-")
+    -- Raise Volume
+    , ((0, 0x1008FF13), spawn "amixer -q set Front 10%+")
+    -- Audio prev
+    , ((0, 0x1008FF16), spawn "")
+    -- Play/pause
+    , ((0, 0x1008FF14), spawn "")
+    -- Audio next
+    , ((0, 0x1008FF17), spawn "")
+    -- Eject
+    , ((0, 0x1008FF2C), spawn "eject -T")
     ]
     ++
  
@@ -223,26 +243,17 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| tabbed shrinkText myTabConfig
 --
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
-    , className =? "Smplayer"       --> doFloat
-    , className =? "Psx.real"       --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "Galculator"     --> doFloat
-    , resource  =? "Komodo_find2"   --> doFloat
-    , resource  =? "compose"        --> doFloat
-    , className =? "Terminal"       --> doShift "1:code"
-    , className =? "Gedit"          --> doShift "1:code"
-    , className =? "Emacs"          --> doShift "1:code"
-    , className =? "Komodo Edit"    --> doShift "1:code"
-    , className =? "Emacs"          --> doShift "1:code"
+    , resource  =? "gpicview"       --> doFloat
+    , resource  =? "skype"          --> doFloat
+    , className =? "Chromium"       --> doShift "2:web"
     , className =? "Google-chrome"  --> doShift "2:web"
-    , className =? "Thunderbird-bin" --> doShift "3:msg"
-    , className =? "Pidgin"         --> doShift "3:msg"
+    , className =? "Xchat"          --> doShift "3:msg"
     , className =? "VirtualBox"     --> doShift "4:vm"
-    , className =? "banshee-1"      --> doShift "5:media"
-    , className =? "Ktorrent"       --> doShift "5:media"
-    , className =? "Xchat"          --> doShift "5:media"
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    , isFullscreen --> (doF W.focusDown <+> doFullFloat) ]
  
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
