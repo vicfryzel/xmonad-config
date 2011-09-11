@@ -1,0 +1,6 @@
+#!/bin/sh
+# Fix screens after, for example, a fullscreen game shut off one monitor.
+# Author: Vic Fryzel
+# http://github.com/vicfryzel/xmonad-config
+
+xrandr -s 0
