@@ -3,7 +3,8 @@
 # Author: Vic Fryzel
 # http://github.com/vicfryzel/xmonad-config
 
-# This is setup to display on dual 1680x1050 monitors, with the right monitor
-# as primary.  Adjust margin as necessary for other resolutions/setups.
+
+# This is setup to display on dual 1680x1050 monitors, with the right-side
+# monitor as primary.  Adjust margin as necessary for other resolutions/setups.
 trayer --edge top --align left --margin 3240 --width 120 --widthtype pixel --height 12 \
-	--padding 1 --tint 0x000000 --transparent true
+    --padding 1 --tint 0x000000 --transparent true

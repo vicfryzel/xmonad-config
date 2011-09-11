@@ -3,5 +3,6 @@
 # Author: Vic Fryzel
 # http://github.com/vicfryzel/xmonad-config
 
+
 /usr/bin/dmenu -fn '-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*' \
   -nb '#000000' -nf '#FFFFFF' -sb '#7C7C7C' -sf '#CEFFAC'

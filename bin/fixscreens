@@ -3,4 +3,5 @@
 # Author: Vic Fryzel
 # http://github.com/vicfryzel/xmonad-config
 
+
 xrandr -s 0

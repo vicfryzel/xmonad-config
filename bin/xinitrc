@@ -4,7 +4,7 @@
 # http://github.com/vicfryzel/xmonad-config
 
 
-# Configure path so that we can access our scripts below
+# Configure PATH so that we can access our scripts below
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 # Configure X
