@@ -6,21 +6,20 @@ http://github.com/vicfryzel/xmonad-config
 
 = Requirements =
 
- * xmonad 0.9.1
- * xmonad-contrib 0.9.1
- * xmobar 0.11.1
+ * xmonad 0.9.1 or 0.9.2
+ * xmonad-contrib 0.9.1 or 0.9.2
+ * xmobar 0.11.1 or 0.13
  * trayer 1.0
  * dmenu 4.0
+ * [yeganesh 2.2](http://dmwit.com/yeganesh/)
 
 
 = Installation =
 
-$ cd
-$ git clone git@github.com:vicfryzel/xmonad-config.git
-$ mv .xmonad .xmonad.orig
-$ cp -R xmonad-config/xmonad ~/.xmonad
-$ cp -R xmonad-config/bin ~/bin
-$ echo "PATH=\$PATH:~/bin" >> ~/.bashrc
+    cd
+    mv .xmonad .xmonad.orig
+    git clone git@github.com:vicfryzel/xmonad-config.git .xmonad
+    echo "PATH=\$PATH:~/.xmonad/bin" >> ~/.bashrc
 
 
 = Notes =
