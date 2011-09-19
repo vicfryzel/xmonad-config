@@ -51,7 +51,7 @@ For source code, or to contribute, see the
         suckless-tools scrot cabal-install
     cabal update
     cabal install yeganesh
-    
+
 
 ## Installation
 
