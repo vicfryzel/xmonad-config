@@ -9,6 +9,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
@@ -73,23 +74,12 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
-    tiled |||
-    Mirror tiled |||
+    Tall 1 (3/100) (1/2) |||
+    Mirror (Tall 1 (3/100) (1/2)) |||
     tabbed shrinkText tabConfig |||
     Full |||
-    spiral (6/7))
-  where
-    -- default tiling algorithm partitions the screen into two panes.
-    tiled   = Tall nmaster delta ratio
- 
-    -- The default number of windows in the master pane.
-    nmaster = 1
- 
-    -- Default proportion of screen occupied by master pane.
-    ratio   = 1/2
- 
-    -- Percent of screen to increment by when resizing panes.
-    delta   = 3/100
+    spiral (6/7)) |||
+    noBorders (fullscreenFull Full)
 
 
 ------------------------------------------------------------------------
@@ -128,21 +118,6 @@ myBorderWidth = 1
 -- "windows key" is usually mod4Mask.
 --
 myModMask = mod1Mask
- 
--- The mask for the numlock key. Numlock status is "masked" from the
--- current modifier status, so the keybindings will work with numlock on or
--- off. You may need to change this on some systems.
---
--- You can find the numlock modifier by running "xmodmap" and looking for a
--- modifier with Num_Lock bound to it:
---
--- > $ xmodmap | grep Num
--- > mod2        Num_Lock (0x4d)
---
--- Set numlockMask = 0 if you don't have a numlock key, or want to treat
--- numlock status separately.
---
-myNumlockMask = mod2Mask
  
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -373,7 +348,6 @@ defaults = defaultConfig {
     focusFollowsMouse  = myFocusFollowsMouse,
     borderWidth        = myBorderWidth,
     modMask            = myModMask,
-    numlockMask        = myNumlockMask,
     workspaces         = myWorkspaces,
     normalBorderColor  = myNormalBorderColor,
     focusedBorderColor = myFocusedBorderColor,
