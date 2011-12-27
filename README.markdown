@@ -60,7 +60,7 @@ you may already have, cloning the git repository, and updating your PATH.
 
     cd
     mv .xmonad .xmonad.orig
-    git clone git@github.com:vicfryzel/xmonad-config.git .xmonad
+    git clone https://github.com/vicfryzel/xmonad-config.git .xmonad
     echo "export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin" >> ~/.bashrc
     source ~/.bashrc
 
