@@ -49,15 +49,13 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Chromium"       --> doShift "2:web"
+    [ className =? "Google-chrome"  --> doShift "2:web"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
+    , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
-    , className =? "Google-chrome"  --> doShift "2:web"
     , resource  =? "gpicview"       --> doFloat
-    , resource  =? "kdesktop"       --> doIgnore
     , className =? "MPlayer"        --> doFloat
-    , resource  =? "skype"          --> doFloat
     , className =? "VirtualBox"     --> doShift "4:vm"
     , className =? "Xchat"          --> doShift "5:media"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
@@ -135,7 +133,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
   , ((modMask, xK_p),
-     spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")
+     spawn "exe=`dmenu_path_c | yeganesh` && eval \"exec $exe\"")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -149,16 +147,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "screenshot")
 
   -- Mute volume.
-  , ((0, 0x1008FF12),
-     spawn "amixer -q set Front toggle")
+  , ((modMask .|. controlMask, xK_m),
+     spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
-  , ((0, 0x1008FF11),
-     spawn "amixer -q set Front 10%-")
+  , ((modMask .|. controlMask, xK_j),
+     spawn "amixer -q set Master 10%-")
 
   -- Increase volume.
-  , ((0, 0x1008FF13),
-     spawn "amixer -q set Front 10%+")
+  , ((modMask .|. controlMask, xK_k),
+     spawn "amixer -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
