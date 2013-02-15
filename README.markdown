@@ -43,7 +43,7 @@ For source code, or to contribute, see the
     sudo pacman -S xmonad xmonad-contrib xmobar trayer dmenu scrot \
         cabal-install
     cabal update
-    cabal install yeganesh
+    cabal install --global yeganesh
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
