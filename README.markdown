@@ -50,7 +50,7 @@ For source code, or to contribute, see the
     sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar trayer \
         suckless-tools scrot cabal-install
     cabal update
-    cabal install yeganesh
+    cabal install --global yeganesh
     
 
 ## Installation
