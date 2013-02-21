@@ -34,14 +34,15 @@ For source code, or to contribute, see the
 * xmonad-contrib 0.9.1 or 0.9.2
 * [xmobar 0.11.1 or 0.13](http://projects.haskell.org/xmobar/)
 * [trayer 1.0](http://fbpanel.sourceforge.net/)
-* [dmenu 4.0](http://tools.suckless.org/dmenu/)
+* [dmenu 4.0](http://tools.suckless.org/dmenu)/
+* [dmenu_path_c](https://aur.archlinux.org/packages.php?ID=38035)
 * [yeganesh 2.2](http://dmwit.com/yeganesh/)
 * [scrot 0.8](http://freshmeat.net/projects/scrot/)
 
 ### Installing requirements on [Arch Linux](http://www.archlinux.org/)
 
-    sudo pacman -S xmonad xmonad-contrib xmobar trayer dmenu scrot \
-        cabal-install
+    sudo pacman -S xmonad xmonad-contrib xmobar trayer scrot \
+        dmenu dmenu_path_c cabal-install
     cabal update
     cabal install --global yeganesh
 
