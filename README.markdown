@@ -53,7 +53,7 @@ When you install xmobar, you may want to install it with the argument `--flags="
 ```shell
 cabal install --global xmobar --flags="all_extensions"
 ```
-The xmobar configuration in this repository uses some xmobar extensions like `Weather` that will not render if not installed. However, the *rest* of xmobar should work without these plugins, so installing all xmobar extensions truly is an optional step.
+The xmobar configuration in this repository uses some xmobar extensions like `Weather` that will not render if not installed. However, the *rest* of xmobar should work without these plugins, so installing all xmobar extensions truly is an optional step. See the [xmobar docs](http://projects.haskell.org/xmobar/) and [this gist detailing the dependencies of xmobar's extensions](https://gist.github.com/hangtwenty/5005768) for more details.
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
