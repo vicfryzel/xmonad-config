@@ -10,24 +10,20 @@ PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 # Configure X
 xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
-xscreensaver -no-splash &
-feh --bg-center ~/wallpapers/city.jpeg &
-
-# Automatically mount removable media
-thunar --daemon &
 
 # Start the system tray
 tray &
 
 # Start two terminals
-urxvt &
-urxvt &
+gnome-terminal &
+gnome-terminal &
 
 # Start two Chromium windows
-chromium &
-chromium &
+google-chrome &
 
-# Start xchat (IRC client)
-xchat &
+#gnome-session-xmonad &
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
+killall gnome-screensaver &
+xscreensaver -no-splash &
+
+exec xmonad

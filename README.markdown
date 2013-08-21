@@ -33,21 +33,21 @@ For source code, or to contribute, see the
 * xmonad 0.9.1 or 0.9.2
 * xmonad-contrib 0.9.1 or 0.9.2
 * [xmobar 0.11.1 or 0.13](http://projects.haskell.org/xmobar/)
-* [trayer 1.0](http://fbpanel.sourceforge.net/)
+* [stalonetray 0.8.0](http://stalonetray.sourceforge.net/)
 * [dmenu 4.0](http://tools.suckless.org/dmenu/)
 * [yeganesh 2.2](http://dmwit.com/yeganesh/)
 * [scrot 0.8](http://freshmeat.net/projects/scrot/)
 
 ### Installing requirements on [Arch Linux](http://www.archlinux.org/)
 
-    sudo pacman -S xmonad xmonad-contrib xmobar trayer dmenu scrot \
+    sudo pacman -S xmonad xmonad-contrib xmobar stalonetray dmenu scrot \
         cabal-install
     cabal update
     cabal install yeganesh
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
-    sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar trayer \
+    sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar stalonetray\
         suckless-tools scrot cabal-install
     cabal update
     cabal install yeganesh
@@ -68,16 +68,14 @@ Once xmonad-config is installed, you also need to ensure you can actually
 start xmonad.  The mechanism to do this varies based on each environment, but
 here are some instructions for some common login managers.
 
-### Starting xmonad from xdm, kdm, or gdm
+### Starting xmonad from lightdm, xdm, kdm, or gdm
 
-    echo xmonad >> ~/.xsession
-    # Note: this method will start no programs in your new session upon login.
-    # To get a terminal in your next session, press Alt+Shift+Enter.
-    # Logout, login from xdm/kdm/gdm
+    ln -s ~/.xmonad/xsession ~/.xsession
+    # Logout, login from lightdm/xdm/kdm/gdm
 
 ### Starting xmonad from slim
 
-    ln -s ~/.xmonad/xinitrc ~/.xinitrc
+    ln -s ~/.xmonad/xsession ~/.xinitrc
     # Logout, login from slim
 
 
