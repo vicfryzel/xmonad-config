@@ -18,12 +18,15 @@ tray &
 gnome-terminal &
 gnome-terminal &
 
-# Start two Chromium windows
+# Start a browser
 google-chrome &
 
-#gnome-session-xmonad &
-
+# Start screensaver
+# Kill gnome-screensaver if started by default
 killall gnome-screensaver &
 xscreensaver -no-splash &
 
-exec xmonad
+# Start sound server
+pulseaudio --start &
+
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad

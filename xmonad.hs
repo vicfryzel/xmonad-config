@@ -9,6 +9,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
@@ -53,11 +54,10 @@ myManageHook = composeAll
     , className =? "Google-chrome"  --> doShift "2:web"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
+    , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "gpicview"       --> doFloat
-    , resource  =? "kdesktop"       --> doIgnore
     , className =? "MPlayer"        --> doFloat
-    , resource  =? "skype"          --> doFloat
     , className =? "VirtualBox"     --> doShift "4:vm"
     , className =? "Xchat"          --> doShift "5:media"
     , className =? "stalonetray"    --> doIgnore
@@ -75,24 +75,12 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
-    tiled |||
-    Mirror tiled |||
+    Tall 1 (3/100) (1/2) |||
+    Mirror (Tall 1 (3/100) (1/2)) |||
     tabbed shrinkText tabConfig |||
     Full |||
-    ThreeCol 1 (3/100) (1/2) |||
-    spiral (6/7))
-  where
-    -- default tiling algorithm partitions the screen into two panes.
-    tiled   = Tall nmaster delta ratio
-
-    -- The default number of windows in the master pane.
-    nmaster = 1
-
-    -- Default proportion of screen occupied by master pane.
-    ratio   = 1/2
-
-    -- Percent of screen to increment by when resizing panes.
-    delta   = 3/100
+    spiral (6/7)) |||
+    noBorders (fullscreenFull Full)
 
 
 ------------------------------------------------------------------------
@@ -167,16 +155,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 
   -- Mute volume.
-  , ((0, 0x1008FF12),
-     spawn "amixer -q set Front toggle")
+  , ((modMask .|. controlMask, xK_m),
+     spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
-  , ((0, 0x1008FF11),
-     spawn "amixer -q set Front 10%-")
+  , ((modMask .|. controlMask, xK_j),
+     spawn "amixer -q set Master 10%-")
 
   -- Increase volume.
-  , ((0, 0x1008FF13),
-     spawn "amixer -q set Front 10%+")
+  , ((modMask .|. controlMask, xK_k),
+     spawn "amixer -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),

@@ -22,8 +22,7 @@ This project is also recommended for advanced xmonad users, who may just not
 want to reinvent the wheel.  All source provided with this project is well
 documented and simple to customize.
 
-![Screenshot of xmonad-config](/vicfryzel/xmonad-config/raw/master/screenshot.png)
-
+![Screenshot of xmonad-config](https://raw.github.com/vicfryzel/xmonad-config/master/screenshot.png)
 For source code, or to contribute, see the
 [xmonad-config project page](http://github.com/vicfryzel/xmonad-config).
 
@@ -43,7 +42,7 @@ For source code, or to contribute, see the
     sudo pacman -S xmonad xmonad-contrib xmobar stalonetray dmenu scrot \
         cabal-install
     cabal update
-    cabal install yeganesh
+    cabal install --global yeganesh
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
@@ -51,7 +50,6 @@ For source code, or to contribute, see the
         suckless-tools scrot cabal-install
     cabal update
     cabal install yeganesh
-
 
 ## Installation
 
