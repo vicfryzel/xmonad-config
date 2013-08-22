@@ -42,11 +42,11 @@ For source code, or to contribute, see the
     sudo pacman -S xmonad xmonad-contrib xmobar stalonetray dmenu scrot \
         cabal-install
     cabal update
-    cabal install --global yeganesh
+    cabal install yeganesh
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
-    sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar stalonetray\
+    sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar stalonetray \
         suckless-tools scrot cabal-install
     cabal update
     cabal install yeganesh
