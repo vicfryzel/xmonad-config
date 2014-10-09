@@ -46,7 +46,7 @@ For source code, or to contribute, see the
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
-    sudo aptitude install xmonad libghc6-xmonad-contrib-dev xmobar stalonetray \
+    sudo aptitude install xmonad libghc-xmonad-contrib-dev xmobar stalonetray \
         suckless-tools scrot cabal-install
     cabal update
     cabal install yeganesh
