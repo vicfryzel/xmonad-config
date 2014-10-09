@@ -68,12 +68,12 @@ here are some instructions for some common login managers.
 
 ### Starting xmonad from lightdm, xdm, kdm, or gdm
 
-    ln -s ~/.xmonad/xsession ~/.xsession
+    ln -s ~/.xmonad/bin/xsession ~/.xsession
     # Logout, login from lightdm/xdm/kdm/gdm
 
 ### Starting xmonad from slim
 
-    ln -s ~/.xmonad/xsession ~/.xinitrc
+    ln -s ~/.xmonad/bin/xsession ~/.xinitrc
     # Logout, login from slim
 
 
