@@ -137,4 +137,4 @@ take screenshots, start the system tray, start dmenu, or fix your multi-head
 layout after a fullscreen application may have turned off one of the screens. 
 
 Colors set in the xmobar config and dmenu script are meant to coincide with the
-[IR_Black terminal and vim themes](http://blog.infinitered.com/entries/show/6).
+[IR_Black terminal and vim themes](http://toddwerth.com/2008/04/30/the-last-vim-color-scheme-youll-ever-need/).
