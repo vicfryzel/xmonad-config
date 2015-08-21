@@ -127,7 +127,7 @@ Once cloned, xmonad-config is laid out as follows.
 
 All xmonad configuration is in ~/.xmonad/xmonad.hs.  This includes
 things like key bindings, colors, layouts, etc.  You may need to have some
-basic understanding of [Haskell](http://www.haskell.org/haskellwiki/Haskell)
+basic understanding of [Haskell](https://wiki.haskell.org/Haskell)
 in order to modify this file, but most people have no problems.
 
 Most of the xmobar configuration is in ~/.xmonad/xmobar.hs.
