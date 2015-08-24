@@ -40,14 +40,14 @@ For source code, or to contribute, see the
 ### Installing requirements on [Arch Linux](http://www.archlinux.org/)
 
     sudo pacman -S xmonad xmonad-contrib xmobar stalonetray dmenu scrot \
-        cabal-install
+        cabal-install xcompmgr
     sudo cabal update
     cabal install --global yeganesh
 
 ### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
 
     sudo aptitude install xmonad libghc-xmonad-contrib-dev xmobar stalonetray \
-        suckless-tools scrot cabal-install
+        suckless-tools scrot cabal-install xcompmgr
     sudo cabal update
     sudo cabal install --global yeganesh
 
