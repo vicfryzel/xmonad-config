@@ -16,6 +16,7 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -161,6 +162,18 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn myScreenshot)
 
+  -- Mute volume.
+  , ((0, xF86XK_AudioMute),
+     spawn "amixer -q set Master toggle")
+
+  -- Decrease volume.
+  , ((0, xF86XK_AudioLowerVolume),
+     spawn "amixer -q set Master 10%-")
+
+  -- Increase volume.
+  , ((0, xF86XK_AudioRaiseVolume),
+     spawn "amixer -q set Master 10%+")
+ 
   -- Mute volume.
   , ((modMask .|. controlMask, xK_m),
      spawn "amixer -q set Master toggle")
