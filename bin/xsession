@@ -25,9 +25,7 @@ gnome-terminal &
 google-chrome &
 
 # Start screensaver
-# Kill gnome-screensaver if started by default
-killall gnome-screensaver &
-xscreensaver -no-splash &
+gnome-screensaver &
 
 # Start sound server
 pulseaudio --start &
