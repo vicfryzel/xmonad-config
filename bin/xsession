@@ -28,6 +28,6 @@ google-chrome &
 gnome-screensaver &
 
 # Start sound server
-pulseaudio --start &
+pulseaudio --start --log-target=syslog &
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
