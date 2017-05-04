@@ -16,9 +16,10 @@ Config {
         Run Swap ["-t","Swap: <usedratio>%","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Network "em1" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
+        Run Com "getMasterVolume" [] "volumelevel" 10,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %em1%   <fc=#FFFFCC>%date%</fc>   %KPAO%"
+    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%  %em1% |  <fc=#FFFFCC>%date%</fc>   |   Volume: <fc=#b2b2ff>%volumelevel%</fc>"
 }
