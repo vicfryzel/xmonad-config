@@ -20,7 +20,7 @@ xcompmgr -n &
 feh --bg-fill ~/.wallpaper.jpg &
 
 # Start the system tray
-stalonetray -c ~/.xmonad/stalonetrayrc-single
+stalonetray -c ~/.xmonad/stalonetrayrc-single &
 
 # Start two terminals
 gnome-terminal &
