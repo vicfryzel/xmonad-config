@@ -11,6 +11,7 @@ PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
 xmodmap ~/.xmodmap
+setxkbmap -option "ctrl:nocaps" &
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
 xcompmgr -n &
@@ -29,11 +30,9 @@ gnome-terminal &
 google-chrome &
 
 # Start screensaver
-# Kill gnome-screensaver if started by default
-killall gnome-screensaver &
-xscreensaver -no-splash &
+gnome-screensaver &
 
 # Start sound server
-pulseaudio --start &
+pulseaudio --start --log-target=syslog &
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
+gnome-session &

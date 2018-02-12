@@ -69,13 +69,13 @@ here are some instructions for some common login managers.
 
 Note: You may need to choose "Custom xsession" or similar at the login screen.
 
-    ln -s ~/.xmonad/bin/xsession ~/.xsession
+    ln -s ~/.xmonad/xmonad-session-rc ~/.xsession
     # Logout, login from lightdm/xdm/kdm/gdm
 
 
 ### Starting xmonad from slim
 
-    ln -s ~/.xmonad/bin/xsession ~/.xinitrc
+    ln -s ~/.xmonad/xmonad-session-rc ~/.xinitrc
     # Logout, login from slim
 
 
@@ -161,9 +161,9 @@ When you first clone xmonad-config, it is setup to use the single display
 configuration files.
 
 To switch between the single and dual display setups, you must edit
-`bin/xsession` and `xmonad.hs` to point to the appropriate config files.
+`xmonad-session-rc` and `xmonad.hs` to point to the appropriate config files.
 
-In `bin/xsession` change the stalonetray line to read:
+In `xmonad-session-rc` change the stalonetray line to read:
 
     stalonetray -c ~/.xmonad/stalonetrayrc-dual
 
