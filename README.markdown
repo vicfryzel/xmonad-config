@@ -24,34 +24,34 @@ documented and simple to customize.
 
 ![Screenshot of xmonad-config](https://raw.github.com/vicfryzel/xmonad-config/master/screenshot.png)
 For source code, or to contribute, see the
-[xmonad-config project page](http://github.com/vicfryzel/xmonad-config).
+[xmonad-config project page](https://github.com/vicfryzel/xmonad-config).
 
 
 ## Requirements
 
 * xmonad 0.13
 * xmonad-contrib 0.13
-* [xmobar 0.24.5](http://projects.haskell.org/xmobar/)
+* [xmobar 0.24.5](https://github.com/jaor/xmobar)
 * [stalonetray 0.8.1](http://stalonetray.sourceforge.net/)
-* [dmenu 4.7](http://tools.suckless.org/dmenu/)
+* [dmenu 4.7](https://tools.suckless.org/dmenu/)
 * [yeganesh 2.5](http://dmwit.com/yeganesh/)
-* [scrot 0.8](http://freshmeat.net/projects/scrot/)
+* [scrot 0.8](https://en.wikipedia.org/wiki/Scrot)
 
-### Installing requirements on [Arch Linux](http://www.archlinux.org/)
+### Installing requirements on [Arch Linux](https://www.archlinux.org/)
 
     sudo pacman -S xmonad xmonad-contrib xmobar stalonetray dmenu scrot \
         cabal-install xcompmgr
     sudo cabal update
     cabal install --global yeganesh
 
-### Installing requirements on [Ubuntu Linux](http://www.ubuntu.com/)
+### Installing requirements on [Ubuntu Linux](https://www.ubuntu.com/)
 
     sudo aptitude install xmonad libghc-xmonad-contrib-dev xmobar stalonetray \
         suckless-tools scrot cabal-install xcompmgr
     sudo cabal update
     sudo cabal install --global yeganesh
 
-### Installing requirements on [Debian Linux](http://www.debian.org/)
+### Installing requirements on [Debian Linux](https://www.debian.org/)
 
     sudo apt-get install xmonad libghc-xmonad-contrib-dev xmobar stalonetray \
         suckless-tools scrot cabal-install xcompmgr
@@ -148,7 +148,8 @@ take screenshots, start dmenu, or fix your multi-head layout after a
 fullscreen application may have turned off one of the screens. 
 
 Colors set in the xmobar config and dmenu script are meant to coincide with the
-[IR_Black terminal and vim themes](http://toddwerth.com/2008/04/30/the-last-vim-color-scheme-youll-ever-need/).
+IR_Black [terminal](https://github.com/Frizz925/base16-gnome-terminal/blob/master/schemes/base16-ir-black.sh)
+and [vim](http://vimcolors.com/196/ir_black/dark) themes.
 
 ### Configuring xmobar and stalonetray for your displays
 

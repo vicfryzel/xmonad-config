@@ -1,6 +1,6 @@
 -- xmobar config used by Vic Fryzel
 -- Author: Vic Fryzel
--- http://github.com/vicfryzel/xmonad-config
+-- https://github.com/vicfryzel/xmonad-config
 
 -- This xmobar config is for dual 2560x1440 displays and meant to be used with
 -- the stalonetrayrc-dual config.

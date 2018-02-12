@@ -1,6 +1,6 @@
 -- xmobar config used by Vic Fryzel
 -- Author: Vic Fryzel
--- http://github.com/vicfryzel/xmonad-config
+-- https://github.com/vicfryzel/xmonad-config
 
 -- This xmobar config is for a single 4k display (3840x2160) and meant to be
 -- used with the stalonetrayrc-single config.
