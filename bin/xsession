@@ -10,9 +10,13 @@ PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 # Configure X
 xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
+xmodmap ~/.xmodmap
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
 xcompmgr -n &
+
+# Set a wallpaper
+feh --bg-fill ~/.wallpaper.jpg &
 
 # Start the system tray
 tray &
