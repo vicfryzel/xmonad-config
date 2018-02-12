@@ -2,13 +2,27 @@
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
--- This is setup for dual 1920x1080 monitors, with the right monitor as primary
+-- This xmobar config is for a single 4k display (3840x2160) and meant to be
+-- used with the stalonetrayrc-single config.
+--
+-- If you're using a single display with a different resolution, adjust the
+-- position argument below using the given calculation.
 Config {
+    -- Position xmobar along the top, with a stalonetray in the top right.
+    -- Add right padding to xmobar to ensure stalonetray and xmobar don't
+    -- overlap. stalonetrayrc-single is configured for 12 icons, each 19px
+    -- wide. 
+    -- right_padding = num_icons * icon_size
+    -- right_padding = 12 * 19 = 228
+    -- Example: position = TopP 0 228
+    position = TopP 0 228,
     font = "xft:Fixed-8",
     bgColor = "#000000",
     fgColor = "#ffffff",
-    position = Static { xpos = 0, ypos = 0, width = 2560, height = 16 },
-    lowerOnStart = True,
+    lowerOnStart = False,
+    overrideRedirect = False,
+    allDesktops = True,
+    persistent = True,
     commands = [
         Run Weather "KPAO" ["-t","<tempF>F <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
         Run MultiCpu ["-t","Cpu: <total0> <total1> <total2> <total3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
@@ -20,5 +34,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %em1%   <fc=#FFFFCC>%date%</fc>   %KPAO%"
+    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %em1%   %stocks%   %KPAO%   <fc=#FFFFCC>%date%</fc>"
 }

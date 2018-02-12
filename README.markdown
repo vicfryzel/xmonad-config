@@ -51,6 +51,7 @@ For source code, or to contribute, see the
     sudo cabal update
     sudo cabal install --global yeganesh
 
+
 ## Installation
 
 Installing xmonad-config is a matter of backing up any xmonad configuration
@@ -66,13 +67,17 @@ here are some instructions for some common login managers.
 
 ### Starting xmonad from lightdm, xdm, kdm, or gdm
 
+Note: You may need to choose "Custom xsession" or similar at the login screen.
+
     ln -s ~/.xmonad/bin/xsession ~/.xsession
     # Logout, login from lightdm/xdm/kdm/gdm
+
 
 ### Starting xmonad from slim
 
     ln -s ~/.xmonad/bin/xsession ~/.xinitrc
     # Logout, login from slim
+
 
 
 ## Keyboard shortcuts
@@ -119,6 +124,7 @@ get stranded once you logout and back in.
 | <kbd>Alt</kbd>+<kbd>Right Mouse Drag</kbd> | Resize focused window, bring out of tiling if needed |
 
 
+
 ## Personalizing or modifying xmonad-config
 
 Once cloned, xmonad-config is laid out as follows.
@@ -128,11 +134,42 @@ things like key bindings, colors, layouts, etc.  You may need to have some
 basic understanding of [Haskell](https://wiki.haskell.org/Haskell)
 in order to modify this file, but most people have no problems.
 
-Most of the xmobar configuration is in ~/.xmonad/xmobar.hs.
+All other configuration files are in ~/.xmonad.
 
 All scripts are in ~/.xmonad/bin/.  Scripts are provided to do things like
-take screenshots, start the system tray, start dmenu, or fix your multi-head
-layout after a fullscreen application may have turned off one of the screens. 
+take screenshots, start dmenu, or fix your multi-head layout after a
+fullscreen application may have turned off one of the screens. 
 
 Colors set in the xmobar config and dmenu script are meant to coincide with the
 [IR_Black terminal and vim themes](http://toddwerth.com/2008/04/30/the-last-vim-color-scheme-youll-ever-need/).
+
+### Configuring xmobar and stalonetray for your displays
+
+xmonad-config is pre-configured to work on one of two display setups.
+
+1. Single 4K (3840x2160) resolution display.
+2. Dual 2560x1440 displays, with the right display as the primary.
+
+If your display setup is different, you need to edit the xmobar and
+stalonetray configurations provided, probably just to adjust the geometry of
+the bars for your resolution. An example would be if you're using
+xmonad-config on a laptop with a lower resolution screen. In this example,
+you'd simply need to edit the geometries in `xmobar-single.hs` and
+`stalonetrayrc-single`.
+
+When you first clone xmonad-config, it is setup to use the single display
+configuration files.
+
+To switch between the single and dual display setups, you must edit
+`bin/xsession` and `xmonad.hs` to point to the appropriate config files.
+
+In `bin/xsession` change the stalonetray line to read:
+
+    stalonetray -c ~/.xmonad/stalonetrayrc-dual
+
+In `xmonad.hs` change the `myXmobarrc` line to read:
+
+     myXmobarrc = "~/.xmonad/xmobar-dual.hs"
+
+To update geometries, edit `xmobar-single.hs` and `stalonetrayrc-single`, or
+edit `xmobar-dual.hs` and `stalonetrayrc-dual`.

@@ -1,0 +1,25 @@
+# stalonetray config used by Vic Fryzel
+# Author: Vic Fryzel
+# http://github.com/vicfryzel/xmonad-config
+
+
+# This stalonetrayrc is meant to match with xmobar-single.hs. If you use both,
+# then you'll get a perfect setup on a single 4k display (3840x2160). If you
+# have dual monitors, see stalonetrayrc-dual and xmobar-dual.hs.
+
+# If you're using a single display with a different resolution, adjust the
+# geometry below using the given calculation.
+
+# 1 row of 12 icons, each 19px wide/tall. Resolution 3840x2160.
+# position = display_width - (num_icons * icon_size)
+# position = 3840 - (12 * 19) = 3612
+# Example: geometry 12x1+3612
+geometry 12x1+3612
+icon_size 19
+sticky 1
+window_type dock
+dockapp_mode wmaker
+window_strut auto
+skip_taskbar 1
+icon_gravity NE
+background black

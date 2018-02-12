@@ -1,0 +1,28 @@
+# stalonetray config used by Vic Fryzel
+# Author: Vic Fryzel
+# http://github.com/vicfryzel/xmonad-config
+
+
+# This stalonetrayrc is meant to match with xmobar-dual.hs. If you use both,
+# then you'll get a perfect setup on dual 2560x1440 displays, with the right
+# display as primary. The primary display shows both xmobar and stalonetray.
+# If you have a single display, see stalonetrayrc-single xmobar-single.hs.
+
+# If you're using dual displays with different resolutions, adjust the
+# geometry below using the given calculation.
+
+# 1 row of 12 icons, each 19px wide/tall.
+# Resolution of each display is 2560x1440.
+# Combined width of both displays is 2560 * 2 = 5120.
+# position = combined_width - (num_icons * icon_size)
+# position = 5120 - (12 * 19) = 4892
+# Example: geometry 12x1+4892
+geometry 12x1+4892
+icon_size 19
+sticky 1
+window_type dock
+dockapp_mode wmaker
+window_strut auto
+skip_taskbar 1
+icon_gravity NE
+background black
