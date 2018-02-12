@@ -35,4 +35,4 @@ gnome-screensaver &
 # Start sound server
 pulseaudio --start --log-target=syslog &
 
-gnome-session &
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
