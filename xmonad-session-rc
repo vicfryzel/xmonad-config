@@ -30,7 +30,8 @@ gnome-terminal &
 google-chrome &
 
 # Start screensaver
-gnome-screensaver &
+killall gnome-screensaver &
+xscreensaver -no-splash &
 
 # Start sound server
 pulseaudio --start --log-target=syslog &
