@@ -360,7 +360,8 @@ main = do
           , ppSep = "   "
       }
       , manageHook = manageDocks <+> myManageHook
-      , startupHook = docksStartupHook <+> setWMName "LG3D"
+--      , startupHook = docksStartupHook <+> setWMName "LG3D"
+      , startupHook = setWMName "LG3D"
       , handleEventHook = docksEventHook
   }
 
