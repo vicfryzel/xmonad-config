@@ -32,6 +32,7 @@ For source code, or to contribute, see the
 * xmonad 0.13
 * xmonad-contrib 0.13
 * [xmobar 0.24.5](https://github.com/jaor/xmobar)
+* [consolekit 0.4.6](https://www.freedesktop.org/wiki/Software/ConsoleKit/)
 * [stalonetray 0.8.1](http://stalonetray.sourceforge.net/)
 * [dmenu 4.7](https://tools.suckless.org/dmenu/)
 * [yeganesh 2.5](http://dmwit.com/yeganesh/)
@@ -43,11 +44,16 @@ For source code, or to contribute, see the
         cabal-install xcompmgr
     sudo cabal update
     cabal install --global yeganesh
+    
+Also install the [consolekit-git](https://wiki.archlinux.org/index.php/ConsoleKit)
+package from the AUR. The process for doing this is documented
+[here](https://wiki.archlinux.org/index.php/Arch_User_Repository).
+
 
 ### Installing requirements on [Ubuntu Linux](https://www.ubuntu.com/) or [Debian Linux](https://www.debian.org)
 
     sudo aptitude install xmonad libghc-xmonad-contrib-dev xmobar stalonetray \
-        suckless-tools scrot cabal-install xcompmgr
+        suckless-tools scrot cabal-install xcompmgr consolekit
     sudo cabal update
     sudo cabal install --global yeganesh
 
