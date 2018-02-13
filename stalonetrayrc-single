@@ -10,12 +10,13 @@
 # If you're using a single display with a different resolution, adjust the
 # geometry below using the given calculation.
 
-# 1 row of 12 icons, each 19px wide/tall. Resolution 3840x2160.
+# 1 row of 12 icons, each 23px wide/tall. Resolution 3840x2160.
+# This icon size aligns with the size of xmobar with font "xft:monospace-8"
 # position = display_width - (num_icons * icon_size)
-# position = 3840 - (12 * 19) = 3612
-# Example: geometry 12x1+3612
-geometry 12x1+3612
-icon_size 19
+# position = 3840 - (12 * 23) = 3564
+# Example: geometry 12x1+3564
+geometry 12x1+3564
+icon_size 23
 sticky 1
 window_type dock
 dockapp_mode wmaker

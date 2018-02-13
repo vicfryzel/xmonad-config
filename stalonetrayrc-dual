@@ -11,14 +11,15 @@
 # If you're using dual displays with different resolutions, adjust the
 # geometry below using the given calculation.
 
-# 1 row of 12 icons, each 19px wide/tall.
+# 1 row of 12 icons, each 23px wide/tall.
+# This icon size aligns with the size of xmobar with font "xft:monospace-8"
 # Resolution of each display is 2560x1440.
 # Combined width of both displays is 2560 * 2 = 5120.
 # position = combined_width - (num_icons * icon_size)
-# position = 5120 - (12 * 19) = 4892
-# Example: geometry 12x1+4892
-geometry 12x1+4892
-icon_size 19
+# position = 5120 - (12 * 23) = 4844
+# Example: geometry 12x1+4844
+geometry 12x1+4844
+icon_size 23
 sticky 1
 window_type dock
 dockapp_mode wmaker
